@@ -1,0 +1,283 @@
+/* Estilos principales para IA Assistant */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 30px 0;
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* Cards */
+.card, .info-card, .actions-card, .back-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.card h2, .info-card h3 {
+    color: #667eea;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+}
+
+/* Messages */
+.messages {
+    margin-bottom: 20px;
+}
+
+.alert {
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.alert.error {
+    background: #fee2e2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+
+.alert.success {
+    background: #d1fae5;
+    color: #059669;
+    border: 1px solid #a7f3d0;
+}
+
+/* Form */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+.form-group textarea,
+.form-group input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group textarea:focus,
+.form-group input[type="email"]:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Buttons */
+.btn-primary {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    display: inline-block;
+    background: #4b5563;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: #374151;
+}
+
+/* Flow Diagram */
+.flow-diagram {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 0;
+}
+
+.flow-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background: #f3f4f6;
+    border-radius: 10px;
+    min-width: 100px;
+}
+
+.step-number {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.step-name {
+    font-size: 0.9em;
+    color: #4b5563;
+    text-align: center;
+}
+
+.flow-arrow {
+    font-size: 1.5em;
+    color: #667eea;
+    font-weight: bold;
+}
+
+/* Result page */
+.question-box {
+    background: #f3f4f6;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.response-box {
+    background: #ecfdf5;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #10b981;
+    font-size: 1.1em;
+    line-height: 1.8;
+    white-space: pre-wrap;
+}
+
+/* Action buttons */
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+.success-badge {
+    background: #d1fae5;
+    color: #059669;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.feedback-badge {
+    background: #fef3c7;
+    color: #d97706;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+/* Back card */
+.back-card {
+    text-align: center;
+}
+
+.back-card .btn-primary {
+    width: auto;
+    padding: 15px 40px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px 0;
+    color: white;
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    
+    header h1 {
+        font-size: 2em;
+    }
+    
+    .flow-diagram {
+        flex-direction: column;
+    }
+    
+    .flow-arrow {
+        transform: rotate(90deg);
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .btn-primary {
+        width: 100%;
+    }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado - IA Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✅ Resultado</h1>
+            <p>Tu respuesta de IA Assistant</p>
+        </header>
+
+        <main>
+            <div class="card">
+                <h2>📝 Tu Pregunta</h2>
+                <div class="question-box">
+                    {{ user_input }}
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>💬 Respuesta de IA</h2>
+                <div class="response-box">
+                    {{ llm_response }}
+                </div>
+            </div>
+
+            <div class="actions-card">
+                <h3>📥 Acciones disponibles</h3>
+                
+                <div class="action-buttons">
+                    {% if pdf_path %}
+                    <a href="{{ url_for('download_pdf', filename=pdf_filename) }}" class="btn-secondary">
+                        📄 Descargar PDF
+                    </a>
+                    {% endif %}
+                    
+                    {% if email_sent %}
+                    <div class="success-badge">
+                        ✉️ Email enviado a: {{ recipient_email }}
+                    </div>
+                    {% endif %}
+                    
+                    {% if feedback_processed %}
+                    <div class="feedback-badge">
+                        📊 Feedback procesado: {{ feedback_sentiment }}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="back-card">
+                <a href="{{ url_for('index') }}" class="btn-primary">
+                    ← Hacer otra pregunta
+                </a>
+            </div>
+        </main>
+
+        <footer>
+            <p>IA Assistant © 2024 | Construido con LangGraph + Flask + Groq</p>
+        </footer>
+    </div>
+</body>
+</html>
